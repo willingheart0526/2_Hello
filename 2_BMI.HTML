@@ -1,0 +1,79 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS 02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <script>
+
+        var w = 65;
+        var h = 173;
+
+        var BMI = w / ((h/100)*(h/100));
+
+        document.write("當體重"+w+"公斤，身高"+h+"公分<br>");
+
+        document.write("BMI是"+ Math.round(BMI)+"<br>");
+
+        if(BMI>35)
+        {
+            document.write("重度肥胖");
+        }
+        else if(BMI<=35 && BMI>30)
+        {
+            document.write("中度肥胖");
+        }
+        else if(BMI<=30 && BMI>24)
+        {
+            document.write("輕度肥胖");
+        }
+        else if(BMI<24 && BMI>18)
+        {
+            document.write("正常");
+        }
+        else
+        {
+            document.write("過瘦");
+        }
+
+
+
+
+        for(var l = 0;l<10;l++)
+        {
+            console.log(l);
+        }
+
+        var d = [1,2,3];
+        for(i in d)
+        {
+            console.log(i,d[i]);
+        }
+
+        var j = 0;
+        while(j<5)
+        {
+            console.log(j);
+            j++;
+        }
+
+        var k = 0;
+        do
+        {
+            console.log(k);
+            k++;
+        }
+        while(k<5);
+
+        function add(y,z)
+        {
+            return y+z;
+        }
+
+    </script>
+</body>
+</html>

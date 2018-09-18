@@ -1,0 +1,51 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS 02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    身高(cm)：<input type="text" id="height" value="173"><br>
+    體重(kg)：<input type="text" id="weight" value="65"><br>
+    <button onclick="calcBmi()">計算</button>
+    <hr>
+
+    BMI:<span id="bmi"></span> <br>
+    <script>
+        function calcBmi()
+        {
+            var h = document.getElementById("height").value;
+            h = parseFloat(h) / 100;
+
+            var w = document.getElementById("weight").value;
+            w = parseFloat(w);
+
+            bmi = w /(h * h);
+
+            if(bmi>35)
+            {
+                ans = "重度肥胖";
+            }
+            else if(bmi<=35 && bmi >30)
+            {
+                ans = "中度肥胖";
+            }
+            else if(bmi<=30 && bmi>24)
+            {
+                ans = "輕度肥胖";
+            }
+            else if(bmi<=24 && bmi>18)
+            {
+                ans = "正常體重";
+            }
+            else
+            {
+                ans = "體重過輕";
+            }
+            document.getElementById("bmi").innerText = Math.round(bmi) + ans;
+        }
+    </script>
+</body>
+</html>
