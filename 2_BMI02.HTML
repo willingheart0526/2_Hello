@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS 02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">身高(cm)</span>
+            </div>
+            <input type="text"class="form-control" id="height" value="173" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"><br>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">體重(kg)</span>
+            </div>
+            <input type="text" id="weight" value="65" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <button onclick="calcBmi()" type="button" class="btn btn-outline-success">計算</button>
+
+
+        <hr>
+    
+        BMI：<span id="bmi"></span> <br>
+        <script>
+            function calcBmi()
+            {
+                var h = document.getElementById("height").value;
+                h = parseFloat(h) / 100;
+    
+                var w = document.getElementById("weight").value;
+                w = parseFloat(w);
+    
+                bmi = w /(h * h);
+    
+                if(bmi>35)
+                {
+                    ans = "重度肥胖";
+                }
+                else if(bmi<=35 && bmi >30)
+                {
+                    ans = "中度肥胖";
+                }
+                else if(bmi<=30 && bmi>24)
+                {
+                    ans = "輕度肥胖";
+                }
+                else if(bmi<=24 && bmi>18)
+                {
+                    ans = "正常體重";
+                }
+                else
+                {
+                    ans = "體重過輕";
+                }
+                document.getElementById("bmi").innerText = Math.round(bmi*100)/100 + "，" + ans;
+            }
+        </script>
+    </body>
+    </html>
