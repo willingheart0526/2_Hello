@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest App</title>
+    <script src="js/funs.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></head>
+
+<body>
+    <h1>Rest API Testing</h1>
+    <hr>
+    <input type="button" class="btn btn-primary" value="GET" id="btnGet">
+    <input type="button" class="btn btn-primary" value="POST" id="btnPost">
+    <input type="button" class="btn btn-primary" value="PUT" id="btnPut">
+    <input type="button" class="btn btn-primary" value="PATCH" id="btnPatch">
+    <input type="button" class="btn btn-primary" value="DELETE" id="btnDelete">
+    <input type="button" class="btn btn-primary" value="Filtering resources" id="btnFiltering">
+    <input type="button" class="btn btn-primary" value="Nested resources" id="btnNested">
+    <hr>
+    <div id="info"></div>
+    <script>
+
+        window.onload = () => {
+            setElement('btnGet').onclick = getJson;
+            setElement('btnPost').onclick = postJson;
+            setElement('btnPut').onclick = putJson;
+            setElement('btnPatch').onclick = patchJson;
+            setElement('btnDelete').onclick = deleteJson;
+            setElement('btnFiltering').onclick = filterJson;
+            setElement('btnNested').onclick = nestJson;
+        }
+
+    </script>
+</body>
+
+</html>
