@@ -4,7 +4,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
 <script>
-    const TOPIC = "tw/iot/01";
+    const TOPIC = "tw/iot/abc123/abc123";
     const ClientId = "lens_XrSgCUlrz6hCTQCGtvXriTAuX";
     var client = false;
 
@@ -26,7 +26,7 @@
         var input_text = document.getElementById("mqtt_text");
         var payload = input_text.value;
         var message = new Paho.MQTT.Message(payload);
-        message.destinationName = TOPIC + "/msg";
+        message.destinationName = TOPIC + "/abc123";
         client.send(message);
         input_text.value = '';
     }
